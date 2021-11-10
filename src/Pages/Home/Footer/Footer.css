@@ -1,0 +1,39 @@
+.bg-color{
+    background-color: #1f1f1f;
+    padding-top: 50px;
+    margin-top: 50px;
+    position: sticky;
+}
+.bg-color h3 {
+    color: whitesmoke;
+}
+.bg-color h5 {
+    color: whitesmoke;
+}
+.btn-subscribe{
+    background-color:#1f1f1f ;
+    border: 2px solid whitesmoke;
+    color: whitesmoke;
+    margin-left: 10px;
+    border-radius: 20px
+}
+.main-style{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.main-style div{
+    margin: 80px;
+}
+.main-style h2 , li{
+    color: whitesmoke;
+}
+.icon-style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-style h2{
+    color: whitesmoke;
+}
