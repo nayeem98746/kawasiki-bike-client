@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonGroup, Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/UseAuth';
 import logo from '../../../Images/logo.jpg'
@@ -15,12 +15,20 @@ const Header = () => {
          <Navbar.Collapse className="justify-content-end">
              <Nav.Link as={Link} to="/home">Home</Nav.Link>
             <Nav.Link as={Link} to="/services">Services</Nav.Link>
+            <Nav.Link as={Link} to="/explores">Explore</Nav.Link>
+            <Nav.Link as={Link} to="/reviews">Reviews</Nav.Link>
             
           
               
            {
              user?.email ? 
-              <Button onClick={logout} >Logout</Button>
+             <Container >
+               <Nav.Link as={Link} to="/dashboard">
+             <Button>Dashboard</Button>
+             </Nav.Link>
+                <Button onClick={logout} >Logout</Button>
+             </Container>
+             
              :
            <Nav.Link as={Link} to="/login">
              <Button>LogIn</Button>
@@ -29,7 +37,7 @@ const Header = () => {
            
             
             <Navbar.Text>
-              Signed in as: <a href="#login">displayname</a>
+              Signed in as: <a href="#login">{user?.email}</a>
           </Navbar.Text>
     </Navbar.Collapse>
          

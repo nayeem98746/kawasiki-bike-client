@@ -1,11 +1,12 @@
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Card, Nav } from 'react-bootstrap';
+import { Link, NavLink } from 'react-router-dom';
 
-const Service = ({service}) => {
-    const {id, name, price, description, img}= service
+const Explore = ({explore}) => {
+    const {id, name, price, description, img} = explore
     return (
         <div>
+           <div>
             <Card className="service" style={{ width: '18rem' }}>
   <Card.Img variant="top" src={img} />
   <Card.Body>
@@ -14,13 +15,16 @@ const Service = ({service}) => {
       description:{description}
     </Card.Text>
     <Card.Title>price:{price}$</Card.Title>
-    <Link to="/purchase" ><Button variant="warning">Purchase  </Button></Link>
+    <Link to="/purchase">
+    <Button className="m-4">Purchase  </Button>
+    </Link>
     
   </Card.Body>
 </Card>
             
         </div>
+        </div>
     );
 };
 
-export default Service;
+export default Explore;

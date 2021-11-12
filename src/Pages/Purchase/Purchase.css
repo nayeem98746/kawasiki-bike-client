@@ -1,0 +1,12 @@
+.page-style{
+    background-color: blanchedalmond;
+}
+.from-style input{
+    width: 40%;
+}
+.from-style textarea{
+    width: 40%;
+}
+.submit-style{
+    width: 20%;
+}

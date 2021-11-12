@@ -2,11 +2,11 @@ import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-const AddService = () => {
-    const { register, handleSubmit,reset } = useForm();
+const AddExplore = () => {
+    const {register, handleSubmit, reset} = useForm()
     const onSubmit = data => {
         console.log(data)
-        axios.post('http://localhost:5000/explore' , data)
+        axios.post('http://localhost:5000/explore2' , data)
         .then(res => {
             console.log(res)
             if(res.data.insertedId){
@@ -30,4 +30,4 @@ const AddService = () => {
     );
 };
 
-export default AddService;
+export default AddExplore;

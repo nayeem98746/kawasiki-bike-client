@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
-import { Button, Col, Container, Row } from 'react-bootstrap';
-import { NavLink  } from 'react-router-dom';
+import { Alert, Button, Col, Container, Row } from 'react-bootstrap';
+import { NavLink,useLocation, useHistory  } from 'react-router-dom';
+import useAuth from '../../../Hooks/UseAuth';
 import login from "../../../Images/login-img.png"
 import "./Login.css"
 
 const Login = () => {
     const [loginFromData, setLoginFromData] = useState({})
+    const {user,  loginUser, isLoading,authError} = useAuth()
+
+  const location = useLocation()
+  const history = useHistory()
+
+
     const handleOnChange = e => {
         const field = e.target.name
         const value = e.target.value
@@ -18,8 +25,8 @@ const Login = () => {
     }
 
     const handleform = e => {
-        alert('hellow')
-        e.preventDefault()
+      loginUser(loginFromData.email, loginFromData.password , location, history)
+      e.preventDefault()
     }
     return (
         <Container>
@@ -59,7 +66,30 @@ const Login = () => {
   <NavLink style={{textDecoration:"none"}} to="/register">
     <Button variant="info">Please Register</Button>
     </NavLink>
+    {user?.email && [
+
+'success'
+
+].map((variant, idx) => (
+<Alert key={idx} variant={variant}>
+  This is a {variant} successful!
+</Alert>
+)) }
+{authError && [
+
+'danger'
+
+].map((variant, idx) => (
+<Alert key={idx} variant={variant}>
+  {authError}
+</Alert>
+))}
 </form>
+<br />
+{user?.email && <Alert >
+    LOGIN SUCCESSFULY
+  </Alert> }
+  
               </Col>
           <Col xs={12} md={6}> 
           <img src={login} alt="" /> 
