@@ -10,7 +10,7 @@ const Purchase = () => {
     const {user} = useAuth()
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://ancient-depths-09291.herokuapp.com/orders', data)
         .then(res => {
           if(res.data.insertedId){
               alert('added successfully')

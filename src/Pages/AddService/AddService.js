@@ -6,7 +6,7 @@ const AddService = () => {
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data => {
         console.log(data)
-        axios.post('http://localhost:5000/explore' , data)
+        axios.post('https://ancient-depths-09291.herokuapp.com/explore' , data)
         .then(res => {
             console.log(res)
             if(res.data.insertedId){

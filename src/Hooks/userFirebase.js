@@ -57,7 +57,7 @@ const useFirebase = () => {
     }
 
       useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://ancient-depths-09291.herokuapp.com/users/${user.email}`)
         .then(res => res.json())
         .then(data => setAdmin(data.admin))
 
@@ -89,7 +89,7 @@ const useFirebase = () => {
 
     const userDatabase = (email, displayName) => {
       const user = {email, displayName}
-      fetch('http://localhost:5000/users', {
+      fetch('https://ancient-depths-09291.herokuapp.com/users', {
         method: 'POST',
         headers:{
           'content-type' : 'application/json'
