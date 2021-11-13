@@ -41,19 +41,21 @@ function DashBoard(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const {user ,  logout} = useAuth()
+
   const drawer = (
     <div style={{marginTop:"100px"}}>
       <Toolbar />
       <Divider />
 
-      <Link to={`${url}/pay`} ><Button>pay</Button></Link><br/>
+      <Link to={`${url}/pay`} ><Button  >pay</Button></Link><br/>
       <Link to={`${url}/review`} ><Button>Review</Button></Link> <br/>
      { admin && <Box>
       <Link to={`${url}/myorders`} ><Button>My orders</Button></Link><br/>
      
       <Link to={`${url}/addexplore`} ><Button>Add a product</Button></Link><br/>
       <Link to={`${url}/makeAdmin`} ><Button>Make Admin</Button></Link><br/>
-      <Link to={`${url}/logout`} ><Button>Logout</Button></Link><br/>
+      <Link to={`${url}/logout`} ><Button onClick={logout}>Logout</Button></Link><br/>
       </Box>}
 
       <List>
