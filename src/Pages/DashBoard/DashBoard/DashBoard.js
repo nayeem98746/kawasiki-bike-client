@@ -27,6 +27,8 @@ import Review from '../Review/Review';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import Pay from '../Pay/Pay';
 import AddExplore from '../../AddExplore/AddExplore';
+import useAuth from '../../../Hooks/UseAuth';
+import MyOrders from '../../MyOrders/MyOrders';
 
 const drawerWidth = 240;
 
@@ -34,7 +36,7 @@ function DashBoard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
-
+  const {admin} = useAuth()
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -46,10 +48,13 @@ function DashBoard(props) {
 
       <Link to={`${url}/pay`} ><Button>pay</Button></Link><br/>
       <Link to={`${url}/review`} ><Button>Review</Button></Link> <br/>
-      <Link to={`${url}/myorder`} ><Button>My orders</Button></Link><br/>
-      <Link to={`${url}/logout`} ><Button>Logout</Button></Link><br/>
+     { admin && <Box>
+      <Link to={`${url}/myorders`} ><Button>My orders</Button></Link><br/>
+     
       <Link to={`${url}/addexplore`} ><Button>Add a product</Button></Link><br/>
       <Link to={`${url}/makeAdmin`} ><Button>Make Admin</Button></Link><br/>
+      <Link to={`${url}/logout`} ><Button>Logout</Button></Link><br/>
+      </Box>}
 
       <List>
         {['Pay', 'My Order', 'Review', 'LogOut'].map((text, index) => (
@@ -141,6 +146,9 @@ function DashBoard(props) {
         </Route>
         <Route path={`${path}/addexplore`}>
           <AddExplore></AddExplore>
+        </Route>
+        <Route path={`${path}/myorders`}>
+          <MyOrders></MyOrders>
         </Route>
       </Switch>
         

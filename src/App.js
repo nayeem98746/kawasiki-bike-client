@@ -21,6 +21,9 @@ import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
 import AddExplore from './Pages/AddExplore/AddExplore';
 import Reviews from './Pages/Reviews/Reviews';
 import Review from './Pages/DashBoard/Review/Review';
+import MyOrders from './Pages/MyOrders/MyOrders';
+import DeliveryMan from './Pages/DeliveryMan/DeliveryMan';
+import About from './Pages/About/About';
 
 function App() {
   return (
@@ -62,9 +65,19 @@ function App() {
          <Route path="/review">
            <Review></Review>
          </Route>
+         <Route path="/deliveryman">
+           <DeliveryMan></DeliveryMan>
+         </Route>
+         <Route path="/about">
+           <About></About>
+         </Route>
           <PrivateRouter path="/purchase">
             <Purchase></Purchase> 
           </PrivateRouter>
+          <PrivateRouter path="/myorders">
+            <MyOrders></MyOrders>
+          </PrivateRouter>
+          
           <Route path="/">
             <NotFound></NotFound>
           </Route>
