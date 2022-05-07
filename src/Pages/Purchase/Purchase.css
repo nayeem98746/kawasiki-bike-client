@@ -10,3 +10,28 @@
 .submit-style{
     width: 20%;
 }
+.booking{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+.order{
+    margin-top: 100px;
+    
+}
+.order form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.order form input,textarea{
+   width: 80%; 
+   border: 3px solid rgb(97, 96, 96);
+   margin-bottom: 30px;
+}
+
+

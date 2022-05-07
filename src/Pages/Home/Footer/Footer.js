@@ -64,13 +64,3 @@ export default Footer;
 
 
 
-<div className=" row main-style  ">
-<div className="col-md-6">
-
-
-</div>
-<div>
-
-
-</div>
-</div>

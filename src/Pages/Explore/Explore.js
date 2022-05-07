@@ -3,7 +3,7 @@ import { Button, Card, Nav } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 
 const Explore = ({explore}) => {
-    const {id, name, price, description, img} = explore
+    const {_id, name, price, description, img} = explore
     return (
         <div>
            <div>
@@ -15,7 +15,7 @@ const Explore = ({explore}) => {
       description:{description}
     </Card.Text>
     <Card.Title>price:{price}$</Card.Title>
-    <Link to="/purchase">
+    <Link to={`/purchase/${_id}`}>
     <Button className="m-4">Purchase  </Button>
     </Link>
     

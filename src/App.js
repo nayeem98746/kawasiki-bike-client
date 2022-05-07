@@ -24,6 +24,8 @@ import Review from './Pages/DashBoard/Review/Review';
 import MyOrders from './Pages/MyOrders/MyOrders';
 import DeliveryMan from './Pages/DeliveryMan/DeliveryMan';
 import About from './Pages/About/About';
+import ChectOut from './Pages/Checkout/ChectOut';
+import Success from './Pages/Purchase/Success';
 
 function App() {
   return (
@@ -71,7 +73,13 @@ function App() {
          <Route path="/about">
            <About></About>
          </Route>
-          <PrivateRouter path="/purchase">
+         <Route path="/success">
+           <Success></Success>
+         </Route>
+         <Route path="/checkout">
+           <ChectOut></ChectOut>
+         </Route>
+          <PrivateRouter path="/purchase/:serviceId">
             <Purchase></Purchase> 
           </PrivateRouter>
           <PrivateRouter path="/myorders">

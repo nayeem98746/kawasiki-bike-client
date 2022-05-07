@@ -1,21 +1,21 @@
-import React,{useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Reviews = () => {
-    const [reviews , setReviews] = useState([])
-    useEffect( () => {
+    const [reviews, setReviews] = useState([])
+    useEffect(() => {
         fetch('https://ancient-depths-09291.herokuapp.com/addReview')
-        .then(res => res.json())
-        .then(data => setReviews(data))
-    } ,[])
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [])
     return (
         <div>
             <h2>Our products  reviews {reviews.length}  </h2>
-            <div className=" p-5" style={{display:'grid'}} >
+            <div className=" p-5" style={{ display: 'grid' }} >
                 {
-                    reviews.map(review => <div className="p-4" style={{border:'2px solid black'}}>
-                        <h4 style={{color:'black'}}>user: {review.email}</h4>
-                        <p style={{color:'black'}}>comment: {review.comments}</p>
-                         
+                    reviews.map(review => <div className="p-4" style={{ border: '2px solid black' }}>
+                        <h4 style={{ color: 'black' }}>user: {review.email}</h4>
+                        <p style={{ color: 'black' }}>comment: {review.comments}</p>
+
                     </div>)
                 }
             </div>
