@@ -9,7 +9,7 @@ import './Explores.css'
 const Explores = () => {
     const [explores, setExplores] = useState([])
     useEffect( () => {
-        fetch('https://ancient-depths-09291.herokuapp.com/explore2')
+        fetch('https://still-everglades-27844.herokuapp.com/explore2')
         .then(res => res.json())
         .then(data => setExplores(data))
     } ,[])
