@@ -41,7 +41,7 @@ const Purchase = () => {
       // .then(data => console.log(data))
 
   },[])
-  const users = details?.find(use => use._id = serviceId);
+  const users = details?.find(use => use._id === serviceId);
 
 
 
@@ -91,5 +91,5 @@ const Purchase = () => {
     </div>
     );
 };
-
+// 
 export default Purchase;
