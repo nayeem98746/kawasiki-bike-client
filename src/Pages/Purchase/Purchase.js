@@ -21,7 +21,7 @@ const Purchase = () => {
   }
     const onSubmit = data => {
         console.log(data);
-        axios.post('https://still-everglades-27844.herokuapp.com/orders', data)
+        axios.post('https://frozen-spire-15774.herokuapp.com/orders', data)
         .then(res => {
           if(res.data.insertedId){
               alert('added successfully')
@@ -35,7 +35,7 @@ const Purchase = () => {
   const [details, setDetails] = useState([])
 
   useEffect(() => {
-      fetch(`https://still-everglades-27844.herokuapp.com/explore2`)
+      fetch(`https://frozen-spire-15774.herokuapp.com/explore2`)
       .then(res => res.json())
       .then(data => setDetails(data))
       // .then(data => console.log(data))
@@ -57,7 +57,7 @@ const Purchase = () => {
       product_image:users?.img,
       total_amount:users?.price,
     }
-    fetch(`https://still-everglades-27844.herokuapp.com/init`, {
+    fetch(`https://frozen-spire-15774.herokuapp.com/init`, {
       method:'POST',
       headers:{
         "content-type": "application/json"

@@ -4,14 +4,14 @@ const MyOrders = () => {
     const [user, setUser] = useState([])
     const [orders, setOrders] = useState([])
     useEffect( () => {
-        fetch('https://still-everglades-27844.herokuapp.com/orders')
+        fetch('https://frozen-spire-15774.herokuapp.com/orders')
         .then(res => res.json())
         .then(data => setOrders(data))
     } ,[orders.email])
     const handleDelete = id =>{
         const warning = window.confirm('are you want delete user')
         if(warning){
-          const url = `https://still-everglades-27844.herokuapp.com//orders/${id}`
+          const url = `https://frozen-spire-15774.herokuapp.com//orders/${id}`
           fetch( url, {
               method: 'DELETE'
   

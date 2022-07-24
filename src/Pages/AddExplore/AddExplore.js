@@ -6,7 +6,7 @@ const AddExplore = () => {
     const {register, handleSubmit, reset} = useForm()
     const onSubmit = data => {
         console.log(data)
-        axios.post('https://still-everglades-27844.herokuapp.com/explore2' , data)
+        axios.post('https://frozen-spire-15774.herokuapp.com/explore2' , data)
         .then(res => {
             console.log(res)
             if(res.data.insertedId){

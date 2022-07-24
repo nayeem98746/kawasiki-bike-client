@@ -3,13 +3,10 @@ import React, { useEffect, useState } from 'react';
 import Explore from '../Explore/Explore';
 import './Explores.css'
 
-
-
-
 const Explores = () => {
     const [explores, setExplores] = useState([])
     useEffect( () => {
-        fetch('https://still-everglades-27844.herokuapp.com/explore2')
+        fetch('https://frozen-spire-15774.herokuapp.com/explore2')
         .then(res => res.json())
         .then(data => setExplores(data))
     } ,[])
